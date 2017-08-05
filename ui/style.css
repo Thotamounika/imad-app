@@ -16,6 +16,9 @@ body {
 .bold {
     font-weight: bold;
 }
+.mename{
+    color:#3399ff;
+}
 
 .img-medium {
     height: 200px;
