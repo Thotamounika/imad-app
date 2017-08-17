@@ -3,6 +3,9 @@ body {
     background-color: #ffffff;
     margin-top:60px;
 }
+h2{
+    color:#000000;
+}
 
 .center {
     text-align: center;
