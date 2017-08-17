@@ -24,6 +24,40 @@ var articleOne={
             </p>
     `
 };
+var articleTwo={
+    title:'Article-Two | Thota Mounika',
+    heading:'Article-Two',
+    date:'Aug 19,2017',
+    content:`<p>
+                        Hai this is my second article.<br/>
+                        I'll be honest, I still don't "enjoy" mornings - I mean, waking up is hard to do. But the truth is, the benefits of waking up early have turned me into a believer.<br/>
+                        If you're not convinced, here are my top reasons why waking up early is good for you.
+                        </p>
+                        
+                       
+                            <ol>
+                                <li>Waking Up Early Correlates With Better Grades</li>
+                                <li>Waking Up Early Helps You To Sustain a Healthier Diet</li>
+                                <li>Waking Up Early Enhances Your Productivity</li>
+                                <li>Waking Up Early Gives You a Better Mental Health</li>
+                                <li> Waking Up Early Gives You More Time To Exercise</li>
+                            </ol> `
+    
+};
+var articleThree={
+    title:'Article-Three | Thota Mounika',
+    heading:'Article-Three',
+    date:'Aug 20, 2017',
+    content:`<p>
+                Procrastination means to postpone doing something, especially as a regular practice. It is also to delay something that one should do and it is not done because one does not want to do it. There are habits that do not do any good to people but harm, procrastination is one among them.
+                </p>
+                <p>
+                As it's said commonly that things have their own merits and demerits or pros and cons, but in case of procrastination there can be no advantages except disadvantages because the implied meaning of procrastination is delaying doing something that should be done on time.
+                </p>
+                <p>
+                What advantage can one gain if he postpones doing necessary things? Conversely, the things that are supposed to be done must be done on time, so that the desired results may be attained accordingly.
+                </p> `
+};
 function createTemplate(data)
 {
 var title=data.title;
@@ -82,10 +116,10 @@ app.get('/article-one', function (req, res){
   res.send(createTemplate(articleOne));
 });
 app.get('/article-two', function(req,res){
-   res.sendFile(path.join(__dirname,'ui','article-two.html')); 
+   res.send(createTemplate(articleTwo)); 
 });
 app.get('/article-three', function(req, res){
-    res.sendFile(path.join(__dirname,'ui','article-three.html'));
+    res.send(createTemplate(articleThree));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
