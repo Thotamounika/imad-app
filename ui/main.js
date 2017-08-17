@@ -6,6 +6,6 @@ element.innerHTML='New Value';
 
 //move dragon to right on click on it
 var img=document.getElementById('dragon');
-img.onClick= function(){
+img.onclick= function(){
   img.style.marginLeft='100px';  
 };
