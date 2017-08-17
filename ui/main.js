@@ -3,3 +3,9 @@ console.log('Loaded!');
 var element=document.getElementById('main-text');
 
 element.innerHTML='New Value';
+
+//move dragon to right on click on it
+var img=document.getElementById('dragon');
+img.onClick= function(){
+  img.style.marginLeft='100px';  
+};
