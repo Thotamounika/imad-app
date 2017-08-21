@@ -12,7 +12,8 @@ button.onclick=function(){
                           {
                                   //Take some action
                                   if(request.status==200)
-                                  {alert('hai');
+                                  {
+                                      alert('hai');
                                       //capture the response and store it in a variable
                                       var counter=request.responseText;
                                       //render the variable in the correct span
