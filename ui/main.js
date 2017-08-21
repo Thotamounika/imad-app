@@ -1,6 +1,7 @@
 
 //counter code
 var button=document.getElementById('counter');
+var counter=0;
 button.onclick=function(){
                   //create a request object
                   var request=new XMLHttpRequest();
@@ -29,6 +30,7 @@ button.onclick=function(){
                   //Make the request
                   
                   request.open('GET','http://thotasrinagamounika.imad.hasura-app.io/counter',true);
+                  counter=counter+1;
                   var span=document.getElementById('count');
                                       span.innerHTML=counter.toString();
                   request.send(null);
