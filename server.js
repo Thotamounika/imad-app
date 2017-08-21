@@ -71,7 +71,7 @@ var htmlTemplate=`
             <title>${title}</title>
             <meta name="viewport" content="width=device-width,initial-scale=1"/>
             <link href="/ui/style.css" rel="stylesheet" />
-            <link rel="icon" href="/ui/iMac.gif" type="image/gif" sizes="16x16">
+            <link rel="icon" href="/ui/favicon.ico" type="image/gif" sizes="16x16">
             
         </head>
         <body>
@@ -124,8 +124,8 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/ui/main.js', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
-app.get('/ui/iMac.gif', function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'iMac.gif'));
+app.get('/ui/favicon.ico', function(req, res){
+    res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
 
 app.get('/:articleName', function (req, res){
