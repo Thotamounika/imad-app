@@ -16,6 +16,7 @@ button.onclick=function(){
                                       alert('hai');
                                       //capture the response and store it in a variable
                                       var counter=request.responseText;
+                                      
                                       //render the variable in the correct span
                                       var span=document.getElementById('count');
                                       span.innerHTML=counter.toString();
