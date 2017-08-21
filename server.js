@@ -106,7 +106,7 @@ app.get('/counter', function(req, res){
    res.send(counter.toString())
 });
 
-app.get('/favicon.ico', function (req, res) {
+app.get('/ui/favicon.ico', function (req, res) {
 
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 
