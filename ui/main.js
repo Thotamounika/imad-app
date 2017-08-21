@@ -1,32 +1,34 @@
-console.log('Loaded!');
-//change the text of main-text div
-/*var element=document.getElementById('main-text');
-
-element.innerHTML='New Value';
-
-//move dragon to right on click on it
-var img=document.getElementById('dragon');
-var marginLeft=0;
-function moveRight()
-{
-    marginLeft=marginLeft+1;
-    img.style.marginLeft=marginLeft+'px';
-}
-img.onclick= function(){
-  var interval=setInterval(moveRight,100) 
-};*/
 
 //counter code
 var counter=0;
 var button=document.getElementById('button');
 button.onclick=function(){
-  //Make a request to the counter endpoint
-  
-  //capture the response and store it in a variable
-  counter=counter+1;
-  //render the variable in the correct span
-  var span=document.getElementById('count');
-  span.innerHTML=counter.toString();
+  //create a request object
+  var request=new XMLHttpRequest();
   
   
-};
+  request.onreadystatechange=function()
+  {
+      if(request.readystate===XMLHttpRequest.DONE)
+      {
+          //Take some action
+          if(request.status===200)
+          {
+              //capture the response and store it in a variable
+              var counter=request.responseText;
+              //render the variable in the correct span
+              var span=document.getElementById('count');
+              span.innerHTML=counter.toString();
+          }
+          
+      }
+      //request is not done yet
+      
+  };
+  
+  //Make the request
+  
+  request.open('GET','http://thotasrinagamounika.imad.hasura-app.io/counter',true);
+  request.send(null);
+  
+  };
