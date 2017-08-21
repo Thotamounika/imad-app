@@ -8,7 +8,7 @@ button.onclick=function(){
   
   request.onreadystatechange=function()
   {
-      if(request.readystate==XMLHttpRequest.DONE)
+      if(request.readystate===XMLHttpRequest.DONE)
       {
           //Take some action
           if(request.status==200)
