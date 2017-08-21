@@ -130,6 +130,10 @@ app.get('/favicon.ico', function (req, res) {
 
 });
 
+app.get('/ui/favicon.ico', function (req, res) {
+res.sendFile(path.join(__dirname, 'ui','favicon.ico'));
+});
+
 app.get('/:articleName', function (req, res){
     var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
