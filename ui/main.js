@@ -18,8 +18,7 @@ button.onclick=function(){
                                       var counter=request.responseText;
                                       
                                       //render the variable in the correct span
-                                      var span=document.getElementById('count');
-                                      span.innerHTML=counter.toString();
+                                      
                                   }
                               
                           }
@@ -30,6 +29,8 @@ button.onclick=function(){
                   //Make the request
                   
                   request.open('GET','http://thotasrinagamounika.imad.hasura-app.io/counter',true);
+                  var span=document.getElementById('count');
+                                      span.innerHTML=counter.toString();
                   request.send(null);
   
   };
