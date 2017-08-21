@@ -71,7 +71,7 @@ var htmlTemplate=`
             <title>${title}</title>
             <meta name="viewport" content="width=device-width,initial-scale=1"/>
             <link href="/ui/style.css" rel="stylesheet" />
-            <link rel="shortcut icon" href="/ui/favicon.ico" type="image/x-icon" />
+            
         </head>
         <body>
             <div class="container">
@@ -122,16 +122,6 @@ app.get('/ui/madi.png', function (req, res) {
 
 app.get('/ui/main.js', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-
-app.get('/favicon.ico', function (req, res) {
-
-  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
-
-});
-
-app.get('/ui/favicon.ico', function (req, res) {
-res.sendFile(path.join(__dirname, 'ui','favicon.ico'));
 });
 
 app.get('/:articleName', function (req, res){
