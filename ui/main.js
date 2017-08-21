@@ -14,12 +14,12 @@ button.onclick=function(){
                                   //Take some action
                                   if(request.status===200)
                                   {
-                                      alert('hai');
+                                     
                                       //capture the response and store it in a variable
                                       var counter=request.responseText;
                                       
                                       //render the variable in the correct span
-                                      
+                                       alert('hai'+counter);
                                       span.innerHTML=counter.toString();
                                       
                                   }
