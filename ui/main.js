@@ -1,6 +1,5 @@
 
 //counter code
-var counter=0;
 var button=document.getElementById('button');
 button.onclick=function(){
   //create a request object
