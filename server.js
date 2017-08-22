@@ -134,8 +134,8 @@ app.get('/:articleName', function (req, res){
 });
 
 var names=[];
-app.get('/submit-name/:name',function(req, res){
-   var name=req.params.name;//extract the name from request
+app.get('/submit-name',function(req, res){
+   var name=req.query.name;//extract the name from request
    names.push(name);//concatenate name to our overall list of names
    //return the response that is array of names by converting array into string using JSON Javascript Object Notation.
    res.send(JSON.stringify(names));
