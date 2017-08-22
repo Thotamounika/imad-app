@@ -77,6 +77,6 @@ button.onclick=function(){
                   };
       var url='http://thotasrinagamounika.imad.hasura-app.io/submit-name/'+name;
       req.open('GET',url,true);
-      req.send(null); 
+       
       
   };
