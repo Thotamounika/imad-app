@@ -128,11 +128,6 @@ app.get('/ui/iMac.gif', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'iMac.gif'));
 });
 
-app.get('/:articleName', function (req, res){
-    var articleName=req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
-});
-
 var names=[];
 app.get('/submit-name',function(req, res){
    var name=req.query.name;//extract the name from request
@@ -141,6 +136,13 @@ app.get('/submit-name',function(req, res){
    res.send(JSON.stringify(names));
    
 });
+
+app.get('/:articleName', function (req, res){
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
+});
+
+
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
