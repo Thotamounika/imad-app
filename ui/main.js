@@ -41,12 +41,29 @@ button.onclick=function(){
   var nameInput=document.getElementById('name');
   var name=nameInput.value;
   var submit=document.getElementById('submit_btn');
+  
   submit.onclick=function(){
       
       //Make a request to server and send the name
       
+      //create a request object
+                  var req=new XMLHttpRequest();
+                  
+                  
+                  req.onreadystatechange=function()
+                  {
+                          if(req.readyState===XMLHttpRequest.DONE)
+                          {
+                                  //Take some action
+                                  if(req.status===200)
+         
+         var names=[];                         {
+      var names=req.responseText;
+      
+      
+      
       //capture a list of names and render it as a list on the page
-      var names=['Name1','Name2','Name3','Name4'];
+      //var names=['Name1','Name2','Name3','Name4'];
       var list='';
       for(var i=0;i<names.length;i++)
       {
@@ -54,5 +71,12 @@ button.onclick=function(){
       }
       var ul=document.getElementById('namelist');
       ul.innerHTML=list;
+      
+         }
+                          }
+                  };
+      
+      req.open('GET','http://thotasrinagamounika.imad.hasura-app.io/submit-name/'+name,true);
+      req.send(null); 
       
   };
