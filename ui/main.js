@@ -36,15 +36,14 @@ button.onclick=function(){
                   request.send(null); 
   
   };
+  
   //submit name
-  //capture name
-  var nameInput=document.getElementById('name');
-  var name=nameInput.value;
   var submit=document.getElementById('submit_btn');
   
   submit.onclick=function(){
-      
-      
+      //capture name
+      var nameInput=document.getElementById('name');
+      var name=nameInput.value;
       
       //create a request object
                   var request=new XMLHttpRequest();
