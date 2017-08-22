@@ -46,7 +46,7 @@ button.onclick=function(){
       //Make a request to server and send the name
       
       //capture a list of names and render it as a list on the page
-      var names=['Name1','Name2','Name3'];
+      var names=['Name1','Name2','Name3','Name4'];
       var list='';
       for(var i=0;i<names.length;i++)
       {
