@@ -132,6 +132,17 @@ app.get('/:articleName', function (req, res){
     var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
+
+var names=[];
+app.get('/submit-name/:name',function(req, res){
+   var name=req.params.name;//extract the name from request
+   names.push(name);//concatenate name to our overall list of names
+   //return the response that is array of names by converting array into string using JSON Javascript Object Notation.
+   res.send(JSON.stringify(names));
+   
+});
+
+
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
