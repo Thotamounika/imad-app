@@ -100,7 +100,7 @@ var htmlTemplate=`
                 </div>
                 
                 <div>
-                    ${date.toDateString()}
+                    ${date}
                 </div>
                 
                 <div>
