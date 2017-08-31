@@ -109,11 +109,10 @@ var htmlTemplate=`
                 </div>
                 
                 <div>
-                <b>comments</b>
-                <hr/>
-                <br>
-               <textarea rows="4" cols="120" placeholder="Write your comments here..."></textarea>
-            </div>
+                    <b>comments:</b>
+                    <hr>
+                    <textarea rows="4" cols="90" placeholder="Write your comments here..."></textarea>
+                </div>
         </body>
     </html>`;
 return htmlTemplate;
