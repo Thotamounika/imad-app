@@ -107,6 +107,11 @@ var htmlTemplate=`
                     
                    ${content} 
                 </div>
+                
+                <div>
+                comments
+                <br>
+                <textarea placeholder="write your comments here!></textarea>
             </div>
         </body>
     </html>`;
