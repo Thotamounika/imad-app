@@ -111,7 +111,7 @@ var htmlTemplate=`
                 <div>
                     <b>comments:</b>
                     <hr>
-                    <textarea id="comments" rows="4" cols="110" placeholder="Write your comments here..."></textarea>
+                    <textarea id="comments" rows="4" cols="110" placeholder="Write your comments here..."></textarea><br/>
                     <button id="postcmt">post</button>
                 </div>
         </body>
