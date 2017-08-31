@@ -119,7 +119,7 @@ var htmlTemplate=`
                     <ul id="cmt_list">
                     
                     </ul>
-                     <script type="text/javascript" src="/ui/blog.js">
+                     <script type="text/javascript" src="/ui/main.js">
         </script>
                 </div>
         </body>
