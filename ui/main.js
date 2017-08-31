@@ -83,3 +83,13 @@ button.onclick=function(){
       
         };
         
+//loading comments
+var postbtn=document.getElementById('post_btn');
+postbtn.onclick=function(){
+    //capture the comment
+    var comment=document.getElementById('comment');
+    var cmt=comment.value;
+    
+    //render it in the correct HTML span
+    
+}
