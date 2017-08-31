@@ -109,7 +109,7 @@ var htmlTemplate=`
                 </div>
                 
                 <div>
-                comments
+                comments<hr/>
                 <br>
                <textarea rows="4" cols="50" placeholder="write your comments here">
 
