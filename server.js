@@ -172,7 +172,7 @@ app.get('/comments',function(req,res){
     var comment=req.query.comment;// the url would be /comments?comment=Nice post!!!
     comments.push(comment); // concatenate comment to our overall list of comments
     //return the response that is array of comments by converting comments array into string using JSON .
-    res.send(JSON.stringigy(comments));
+    res.send(JSON.stringify(comments));
 });
 
 app.get('/articles/:articleName', function (req, res){ 
