@@ -84,6 +84,7 @@ var htmlTemplate=`
             <link href="/ui/style.css" rel="stylesheet" />
             <link rel="icon" href="/ui/iMac.gif" type="image/gif" sizes="16x16">
             
+            
         </head>
         <body>
             <div class="container">
@@ -107,7 +108,8 @@ var htmlTemplate=`
                     
                    ${content} 
                 </div>
-                
+                <script type=text/javascript src="/ui/main.js">
+                </script>
                 <div>
                     <b>comments:</b>
                     <hr>
