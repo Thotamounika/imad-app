@@ -1,4 +1,4 @@
-/*
+
 //counter code
 var button=document.getElementById('counter');
 
@@ -83,7 +83,7 @@ button.onclick=function(){
                   request.send(null); 
       
         };
-        */
+        
 //loading comments
 var postbtn=document.getElementById('post_btn');
 postbtn.onclick=function(){
