@@ -108,8 +108,7 @@ var htmlTemplate=`
                     
                    ${content} 
                 </div>
-                <script type="text/javascript" src="/ui/main.js">
-                </script>
+                
                 <div>
                     <b>comments:</b>
                     <hr>
@@ -120,6 +119,8 @@ var htmlTemplate=`
                     <ul id="cmt_list">
                     
                     </ul>
+                     <script type="text/javascript" src="/ui/main.js">
+        </script>
                 </div>
         </body>
     </html>`;
