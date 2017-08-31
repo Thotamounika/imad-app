@@ -112,9 +112,7 @@ var htmlTemplate=`
                 <b>comments</b>
                 <hr/>
                 <br>
-               <textarea rows="4" cols="50" placeholder="write your comments here">
-
-</textarea>
+               <textarea rows="4" cols="50" placeholder="Describe yourself here..."></textarea>
             </div>
         </body>
     </html>`;
