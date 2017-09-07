@@ -20,7 +20,8 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
-    
+    secret: 'someRandomSecretValue',
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
 var articles={
@@ -200,8 +201,13 @@ app.post('/create-user',function(req,res){
                     var salt=dbString.split('$')[2];
                     var hashedPassword=hash(password,salt);//creating hash based on the password submitted and the original salt
                     if(dbString===hashedPassword){
-                        res.send('credentials are correct.welcome '+username);
                         //create a session
+                        rec.session.auth= {userId: result.rows[0].id};
+                        //set cookie with a session id randomly generating
+                        //internally on the server side it maps the session id to an object
+                        //{auth: {userId}}
+                        res.send('credentials are correct.welcome '+username);
+                        
                     }
                     
                     else{
@@ -212,6 +218,16 @@ app.post('/create-user',function(req,res){
         }
        
    });
+});
+
+app.get('/check-login',function(req, res){
+    if(req.session && req.session.auth && req.session.auth.userId){
+        res.send('You are logged in '+req.session.auth.userId.toString());
+    }
+    else{
+        res.send('You are not logged in');
+    }
+    
 });
 
 var pool=new Pool(config);
