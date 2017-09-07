@@ -155,7 +155,7 @@ app.get('/hash/:input',function(req,res){
 app.post('/create-user',function(req,res){
     
    //This function as an input will take username and password and it will create an entry in the user table
-   
+   //{"username":"mounika","password":"password"}
    var username=req.body.username;//This is a JSON request
    var password=req.body.password;
    var salt=crypto.getRandomBytes(128).toString('hex');
