@@ -124,7 +124,7 @@ var htmlTemplate=`
                     <ul id="cmt_list">
                     
                     </ul>
-                     <script type="text/javascript" src="/ui/main.js">
+                     <script type="text/javascript" src="/ui/blog.js">
         </script>
                 </div>
         </body>
