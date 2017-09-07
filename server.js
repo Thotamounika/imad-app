@@ -197,6 +197,7 @@ app.post('/create-user',function(req,res){
                     var hashedPassword=hash(password,salt);//creating hash based on the password submitted and the original salt
                     if(dbString===hashedPassword){
                         res.send('credentials are correct.welcome '+username);
+                        //create a session
                     }
                     
                     else{
@@ -279,6 +280,7 @@ app.get('/articles/:articleName', function (req, res){
     });
   
 });
+
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
     res.send(createTemplate(articles[articleName]));
