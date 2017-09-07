@@ -202,7 +202,7 @@ app.post('/create-user',function(req,res){
                     var hashedPassword=hash(password,salt);//creating hash based on the password submitted and the original salt
                     if(dbString===hashedPassword){
                         //create a session
-                        rec.session.auth= {userId: result.rows[0].id};
+                        req.session.auth= {userId: result.rows[0].id};
                         //set cookie with a session id randomly generating
                         //internally on the server side it maps the session id to an object
                         //{auth: {userId}}
