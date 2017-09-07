@@ -1,16 +1,8 @@
-
-
-  //submit username/password
+ //submit username/password
   var submit=document.getElementById('submit_btn');
-  
   submit.onclick=function(){
-      
-      
-      
       //create a request object
                   var request=new XMLHttpRequest();
-                  
-                  
                   request.onreadystatechange=function()
                   {
                           if(request.readyState===XMLHttpRequest.DONE)
@@ -31,8 +23,6 @@
                                   {
                                       alert('something went wrong on the server');
                                   }
-                                  
-                              
                           }
                           //request is not done yet
                       
@@ -45,7 +35,7 @@
                   console.log(password);
                   request.setRequestHeader('Content-Type','application/json');
                   request.open('POST','http://thotasrinagamounika.imad.hasura-app.io/login',true);
-                  request.send(JSON.stringify({username:username,password:password})); 
+                  request.send(JSON.stringify({username: username,password: password})); 
       
         };
         
