@@ -171,26 +171,24 @@ app.post('/create-user',function(req,res){
        
        
    });
+});
    
    app.post('/login',function(req,res){
       
    var username=req.body.username;//This is a JSON request
    var password=req.body.password;
-   
-   
-   
-   
    pool.query('SELECT * from "user" WHERE username= $1',[username],function(err,result){
        
        if(err){
             res.status(500).send(err.toString());
         }
         else{
+                    
                     if(result.rows.length===0){
                     
                     res.send(403).send('username or password is incorrect');
-                }
-                else{
+                    }
+                  else{
                     //username exists now match password
                     
                     //extract the password stored in the database
@@ -200,6 +198,7 @@ app.post('/create-user',function(req,res){
                     if(dbString===hashedPassword){
                         res.send('credentials are correct.welcome '+username);
                     }
+                    
                     else{
                         res.send(403).send('username or password is incorrect');
                     }
@@ -208,13 +207,7 @@ app.post('/create-user',function(req,res){
         }
        
    });
-   
-    
-    
 });
-
-
-
 
 var pool=new Pool(config);
 app.get('/test-db', function(req, res){
