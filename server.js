@@ -172,6 +172,43 @@ app.post('/create-user',function(req,res){
        
    });
    
+   app.post('/login',function(req,res){
+      
+   var username=req.body.username;//This is a JSON request
+   var password=req.body.password;
+   
+   
+   
+   
+   pool.query('SELECT * from "user" WHERE username= $1',[username],function(err,result){
+       
+       if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+                    if(result.rows.length===0){
+                    
+                    res.send(403).send('username or password is incorrect');
+                }
+                else{
+                    //username exists now match password
+                    
+                    //extract the password stored in the database
+                    var dbString=result.rows[0].password;
+                    var salt=dbString.split('$')[2];
+                    var hashedPassword=hash(password,salt);//creating hash based on the password submitted and the original salt
+                    if(dbString===hashedPassword){
+                        res.send('credentials are correct.welcome '+username);
+                    }
+                    else{
+                        res.send(403).send('username or password is incorrect');
+                    }
+                    
+                }
+        }
+       
+   });
+   
     
     
 });
