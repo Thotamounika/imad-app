@@ -1,6 +1,6 @@
 
 
-  //submit name
+  //submit username/password
   var submit=document.getElementById('submit_btn');
   
   submit.onclick=function(){
@@ -20,19 +20,19 @@
                                   if(request.status===200)
                                   {
                                      
-                                      //capture a list of names and render it as a list on the page
-                                      var names=request.responseText;
-                                      names=JSON.parse(names);
-                                      var list='';
-                                      for(var i=0;i<names.length;i++)
-                                      {
-                                          list +='<li>'+names[i]+'</li>'; 
-                                      }
-                                      var ul=document.getElementById('namelist');
-                                      ul.innerHTML=list;
-                                      
+                                      console.log('user logged in succefully');
+                                      alert('Logged in successfully');
                                       
                                   }
+                                  else if(request.status===403)
+                                  {
+                                      alert('Invalid username or password');
+                                  }
+                                  else if(request.status===500)
+                                  {
+                                      alert('something went wrong on the server');
+                                  }
+                                  
                               
                           }
                           //request is not done yet
@@ -40,9 +40,13 @@
                   };
                   
                   //Make a request to server and send the name
-                  
-                  request.open('GET','http://thotasrinagamounika.imad.hasura-app.io/submit-name?name='+name,true);
-                  request.send(null); 
+                  var username=document.getElementById('username').value;
+                  var password=document.getElementById('password').value;
+                  console.log(username);
+                  console.log(password);
+                  request.setRequestHeader('Content-Type',application/json);
+                  request.open('POST','http://thotasrinagamounika.imad.hasura-app.io/login',true);
+                  request.send(JSON.stringify({username:username,password:password})); 
       
         };
         
