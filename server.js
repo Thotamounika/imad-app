@@ -193,7 +193,7 @@ app.post('/create-user',function(req,res){
                     
                     if(result.rows.length===0){
                     res.setHeader('Content-Type', 'application/json');
-                    res.send(403).send(JSON.parse('{"error":"Username or Password is incorrect"}'));
+                    res.status(403).send(JSON.parse('{"error":"Username or Password is incorrect"}'));
                     }
                   else{
                     //username exists now match password
@@ -215,7 +215,7 @@ app.post('/create-user',function(req,res){
                     
                     else{
                         res.setHeader('Content-Type', 'application/json');
-                        res.send(403).send(JSON.parse('{"message":"Username or Password is incorrect"}'));
+                        res.status(403).send(JSON.parse('{"message":"Username or Password is incorrect"}'));
                     }
                     
                 }
