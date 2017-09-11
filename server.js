@@ -169,7 +169,7 @@ app.post('/create-user',function(req,res){
        
        if(err){
            res.setHeader('Content-Type', 'application/json');
-            res.status(500).send(JSON.parse('"message":{err.toString()}'));
+            res.status(500).send(JSON.parse('"error":{err.toString()}'));
         }
         else{
             res.setHeader('Content-Type', 'application/json');
@@ -187,7 +187,8 @@ app.post('/create-user',function(req,res){
    pool.query('SELECT * from "user" WHERE username= $1',[username],function(err,result){
        
        if(err){
-            res.status(500).send(JSON.parse('{"error":"Username or Password is incorrect"}'));
+           res.setHeader('Content-Type', 'application/json');
+            res.status(500).send(JSON.parse('{"error":{err.toString()}'));
         }
         else{
                     
