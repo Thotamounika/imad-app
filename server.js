@@ -187,7 +187,7 @@ app.post('/create-user',function(req,res){
    pool.query('SELECT * from "user" WHERE username= $1',[username],function(err,result){
        
        if(err){
-            res.status(500).send(err.toString());
+            res.status(500).send(JSON.parse('"message":{err.toString()}'));
         }
         else{
                     
