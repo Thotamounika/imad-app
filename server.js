@@ -187,13 +187,13 @@ app.post('/create-user',function(req,res){
    pool.query('SELECT * from "user" WHERE username= $1',[username],function(err,result){
        
        if(err){
-            res.status(500).send(JSON.parse('"message":{err.toString()}'));
+            res.status(500).send(JSON.parse('{"error":"Username or Password is incorrect"}'));
         }
         else{
                     
                     if(result.rows.length===0){
                     res.setHeader('Content-Type', 'application/json');
-                    res.send(403).send(JSON.parse('{"message":"Username or Password is incorrect"}'));
+                    res.send(403).send(JSON.parse('{"error":"Username or Password is incorrect"}'));
                     }
                   else{
                     //username exists now match password
@@ -214,8 +214,8 @@ app.post('/create-user',function(req,res){
                     }
                     
                     else{
-                        //res.setHeader('Content-Type', 'application/json');
-                        res.send(403).send("Invalid Username or Password");
+                        res.setHeader('Content-Type', 'application/json');
+                        res.send(403).send(JSON.parse('{"error":"Username or Password is incorrect"}'));
                     }
                     
                 }
