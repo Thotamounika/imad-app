@@ -168,9 +168,9 @@ app.post('/create-user',function(req,res){
    pool.query('INSERT INTO "user" (username,password) VALUES($1,$2)',[username,dbString],function(err,result){
        
        if(err){
-           String err=err.toString();
+           var error=err.toString();
            res.setHeader('Content-Type', 'application/json');
-            res.status(500).send(JSON.parse(`"error":{${err}`));
+            res.status(500).send(JSON.parse(`"error":{${error}`));
         }
         else{
             res.setHeader('Content-Type', 'application/json');
