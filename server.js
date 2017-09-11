@@ -168,10 +168,12 @@ app.post('/create-user',function(req,res){
    pool.query('INSERT INTO "user" (username,password) VALUES($1,$2)',[username,dbString],function(err,result){
        
        if(err){
-            res.status(500).send(err.toString());
+           res.setHeader('Content-Type', 'application/json');
+            res.status(500).send(JSON.parse('"message":{err.toString()}'));
         }
         else{
-            res.send('user created successfully: '+username);
+            res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.parse(`"message":{"user ${username} is created successfully"}`));
         }
        
        
