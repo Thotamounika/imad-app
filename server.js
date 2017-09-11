@@ -170,7 +170,7 @@ app.post('/create-user',function(req,res){
        if(err){
            var error=err.toString();
            res.setHeader('Content-Type', 'application/json');
-            res.status(500).send(JSON.parse('{"error":"Another user created"}'));
+            res.status(500).send(JSON.parse(`{"error":" ${error}"}`));
         }
         else{
             res.setHeader('Content-Type', 'application/json');
