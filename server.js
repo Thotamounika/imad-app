@@ -190,8 +190,8 @@ app.post('/create-user',function(req,res){
         else{
                     
                     if(result.rows.length===0){
-                    
-                    res.send(403).send('username or password is incorrect');
+                    res.setHeader('Content-Type', 'application/json');
+                    res.send(403).send(JSON.parse('{"message":"Username or Password is incorrect"}'));
                     }
                   else{
                     //username exists now match password
@@ -206,12 +206,14 @@ app.post('/create-user',function(req,res){
                         //set cookie with a session id randomly generating
                         //internally on the server side it maps the session id to an object
                         //{auth: {userId}}
-                        res.send('credentials are correct.welcome '+username);
+                        res.setHeader('Content-Type', 'application/json');
+                        res.send(JSON.parse('{"message":"credentials are correct"}'));
                         
                     }
                     
                     else{
-                        res.send(403).send('username or password is incorrect');
+                        res.setHeader('Content-Type', 'application/json');
+                        res.send(403).send(JSON.parse('{"message": "Username or Password is incorrect"}'));
                     }
                     
                 }
