@@ -207,7 +207,7 @@ app.post('/create-user',function(req,res){
                         //internally on the server side it maps the session id to an object
                         //{auth: {userId}}
                         res.setHeader('Content-Type', 'application/json');
-                        res.send(JSON.parse('{"message":{$username}"credentials are correct"}'));
+                        res.send(JSON.parse('{"message":"{$username}credentials are correct"}'));
                         
                     }
                     
