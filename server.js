@@ -214,8 +214,8 @@ app.post('/create-user',function(req,res){
                     }
                     
                     else{
-                        res.setHeader('Content-Type', 'application/json');
-                        res.send(403).send(JSON.parse('{"message": "Username or Password is incorrect"}'));
+                        //res.setHeader('Content-Type', 'application/json');
+                        res.send(403).send("Invalid Username or Password"));
                     }
                     
                 }
